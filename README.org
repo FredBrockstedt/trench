@@ -1,2 +1,30 @@
 * Ansible Trench
 Repository for organizing ansible-pull files. So pretty much the opposite of Ansible Tower.
+
+* What is this?
+A basic example on how to manage multiple computers from a single inventory and playbook.
+
+* How to run this?
+#+begin_src bash :results output raw
+ansible-playbook -i inventory.yml playbook.yml --connection=local
+#+end_src
+
+If every thing went ok it should look like this
+
+#+RESULTS:
+
+PLAY [My first play] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [fqdn]
+
+TASK [Ping my hosts] ***********************************************************
+ok: [fqdn]
+
+TASK [Print message] ***********************************************************
+ok: [fqdn] => {
+    "msg": "Hello world"
+}
+
+PLAY RECAP *********************************************************************
+fqdn                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
