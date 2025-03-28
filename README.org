@@ -11,8 +11,7 @@ ansible-playbook -i inventory.yml local.yml --connection=local
 
 If every thing went ok it should look like this
 
-#+RESULTS:
-
+#+begin_src 
 PLAY [Ping all hosts] **********************************************************
 
 TASK [Gathering Facts] *********************************************************
@@ -23,3 +22,4 @@ ok: [fqdn]
 
 PLAY RECAP *********************************************************************
 fqdn                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+#+end_src
