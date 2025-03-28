@@ -1,0 +1,2 @@
+* Ansible Trench
+Repository for organizing ansible-pull files. So pretty much the opposite of Ansible Tower.
