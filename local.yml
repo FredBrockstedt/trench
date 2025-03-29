@@ -1,4 +1,4 @@
-# run this with: ansible-playbook -i inventory.ini playbook.yml
+# run this with: ansible-playbook local.yml
 --- 
 - name: Ping all hosts
   hosts: pingers
