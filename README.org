@@ -4,7 +4,16 @@ Repository for organizing ansible-pull files. So pretty much the opposite of Ans
 * What is this?
 A basic example on how to manage multiple computers from a single inventory and playbook.
 
-* How to run this?
+* How to run this locally?
+To run this without checking anything out in git run:
+
+#+begin_src 
+ansible-pull -U https://github.com/FredBrockstedt/trench.git local.yml
+#+end_src
+
+If you are reading a README.org file on your local hard disk you may try to run the
+playbook like this.
+
 #+begin_src bash :results output raw
 ansible-playbook -i inventory.yml local.yml --connection=local
 #+end_src
