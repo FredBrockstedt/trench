@@ -2,6 +2,7 @@
 --- 
 - name: Ping all hosts
   hosts: pingers
+  connection: local
   tasks:
    - name: Ping my hosts
      ansible.builtin.ping:
