@@ -1,9 +1,7 @@
 # run this with: ansible-playbook local.yml
 --- 
-- name: Ping all hosts
-  hosts: pingers
+- name: Infest system with ansible-pull
+  hosts: all
   connection: local
-  tasks:
-   - name: Ping my hosts
-     ansible.builtin.ping:
-
+  roles:
+    - role: infestor

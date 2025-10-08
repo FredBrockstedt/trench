@@ -1,0 +1,4 @@
+---
+- name: Infest SystemD with ansible-pull
+  ansible.builtin.include_tasks: systemd.yml
+  when: ansible_service_mgr == "systemd"

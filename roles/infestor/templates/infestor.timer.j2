@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer to run infestor.service every 20 minutes
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec={{ infestor_interval }}
+Unit=infestor.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,4 @@
+---
+infestor_giturl: https://github.com/FredBrockstedt/trench.git
+infestor_playbook: local.yml
+infestor_interval: 20min

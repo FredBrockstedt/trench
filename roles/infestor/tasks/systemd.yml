@@ -1,0 +1,39 @@
+---
+
+- name: Ensure that the directory for job scripts exists
+  become: true
+  ansible.builtin.file:
+    path: /etc/systemd/system
+    state: directory
+    mode: u=rwx,g=rx,o=rx
+    owner: root
+    group: root
+
+- name: Install ansible-pull service
+  become: true
+  ansible.builtin.template:
+    src: infestor.service.j2
+    dest: /etc/systemd/system/infestor.service
+
+- name: Install ansible-pull timer
+  become: true
+  ansible.builtin.template:
+    src: infestor.timer.j2
+    dest: /etc/systemd/system/infestor.timer
+
+# Ansible systemd module doesn't support reenable, so disable and enable all timers.
+- name: Disable ansible-pull timer
+  become: true
+  ansible.builtin.systemd:
+    name: "infestor.timer" 
+    daemon_reload: true
+    enabled: false
+    state: stopped
+
+- name: Enable ansible-pull timer
+  become: true
+  ansible.builtin.systemd:
+    name: "infestor.timer" 
+    daemon_reload: true
+    enabled: true
+    state: started

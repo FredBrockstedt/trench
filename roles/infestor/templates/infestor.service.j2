@@ -1,0 +1,6 @@
+[Unit]
+Description=Run ansible-pull regularly
+
+[Service]
+Type=oneshot
+ExecStart=ansible-pull -U {{ infestor_giturl }} {{ infestor_playbook }}
