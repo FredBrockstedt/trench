@@ -1,5 +1,5 @@
 local:
-	ansible-playbook -i inventory.yml local.yml --connection=local -K
+	ansible-playbook -i localhost, --connection=local local.yml -K
 
 dependencies:
 	ansible-galaxy role install -r requirements.yml --roles-path ./roles
