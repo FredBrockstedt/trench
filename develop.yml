@@ -1,0 +1,6 @@
+---
+- name: Clone or update repository
+  ansible.builtin.git:
+    repo: "git@github.com:FredBrockstedt/dotfiles.git"
+    dest: "/home/fred/dotfiles"
+    version: "main"
