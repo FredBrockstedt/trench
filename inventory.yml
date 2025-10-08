@@ -1,3 +1,6 @@
 pingers:
   hosts:
     kite-2-1
+linux:
+  hosts:
+    toughbook
