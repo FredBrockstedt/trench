@@ -21,15 +21,6 @@
     src: infestor.timer.j2
     dest: /etc/systemd/system/infestor.timer
 
-# Ansible systemd module doesn't support reenable, so disable and enable all timers.
-- name: Disable ansible-pull timer
-  become: true
-  ansible.builtin.systemd:
-    name: "infestor.timer" 
-    daemon_reload: true
-    enabled: false
-    state: stopped
-
 - name: Enable ansible-pull timer
   become: true
   ansible.builtin.systemd:
