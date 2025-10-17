@@ -1,4 +1,10 @@
 ---
+- name: Check if the system requires a restart
+  ansible.builtin.command: dnf needs-restarting -r
+  register: needs_restart
+  ignore_errors: true
+  changed_when: needs_restart.rc == 1
+
 - name: Template the message of the days
   become: true
   ansible.builtin.template:
