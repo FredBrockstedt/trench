@@ -1,0 +1,5 @@
+---
+- name: Test the message of the days
+  hosts: localhost
+  roles:
+    - motd

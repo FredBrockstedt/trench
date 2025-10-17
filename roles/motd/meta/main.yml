@@ -1,0 +1,7 @@
+galaxy_info:
+  author: Brockstedt
+  description: Create a nice message of the day
+  license: BSD
+  min_ansible_version: 2.4
+
+dependencies: []

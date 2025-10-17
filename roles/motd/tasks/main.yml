@@ -1,0 +1,7 @@
+---
+- name: Template the message of the days
+  become: true
+  ansible.builtin.template:
+    src: motd.j2
+    dest: /etc/motd
+    mode: u=rw,g=r,o=r

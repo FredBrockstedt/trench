@@ -1,0 +1,51 @@
+2025-10-17 19:00:00,374 p=35658 u=fred n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2025-10-17 19:00:00,375 p=35658 u=fred n=ansible WARNING| [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2025-10-17 19:00:00,443 p=35658 u=fred n=ansible ERROR| [ERROR]: A playbook must be a list of plays, got a <class 'ansible.module_utils._internal._datatag._AnsibleTaggedDict'> instead: /Users/fred/Code/Ansible/trench/roles/motd/tests/test.yml
+Origin: /Users/fred/Code/Ansible/trench/roles/motd/tests/test.yml:2:1
+
+1 ---
+2 hosts: localhost
+  ^ column 1
+
+
+2025-10-17 19:01:55,518 p=35716 u=fred n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2025-10-17 19:01:55,520 p=35716 u=fred n=ansible WARNING| [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2025-10-17 19:01:55,604 p=35716 u=fred n=ansible INFO| PLAY [Test the message of the days] ********************************************
+2025-10-17 19:01:55,608 p=35716 u=fred n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-17 19:01:55,812 p=35716 u=fred n=ansible ERROR| [ERROR]: Task failed: Premature end of stream waiting for become success.
+>>> Standard Error
+sudo: a password is required
+
+
+2025-10-17 19:01:55,812 p=35716 u=fred n=ansible INFO| fatal: [localhost]: FAILED! => {"changed": false, "msg": "Task failed: Premature end of stream waiting for become success.\n>>> Standard Error\nsudo: a password is required"}
+2025-10-17 19:01:55,812 p=35716 u=fred n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-17 19:01:55,812 p=35716 u=fred n=ansible INFO| localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-17 19:07:57,511 p=35850 u=fred n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2025-10-17 19:07:57,513 p=35850 u=fred n=ansible WARNING| [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2025-10-17 19:07:57,588 p=35850 u=fred n=ansible INFO| PLAY [Test the message of the days] ************************************************************************************************************
+2025-10-17 19:07:57,591 p=35850 u=fred n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************
+2025-10-17 19:07:57,767 p=35850 u=fred n=ansible ERROR| [ERROR]: Task failed: Premature end of stream waiting for become success.
+>>> Standard Error
+sudo: a password is required
+
+
+2025-10-17 19:07:57,767 p=35850 u=fred n=ansible INFO| fatal: [localhost]: FAILED! => {"changed": false, "msg": "Task failed: Premature end of stream waiting for become success.\n>>> Standard Error\nsudo: a password is required"}
+2025-10-17 19:07:57,768 p=35850 u=fred n=ansible INFO| PLAY RECAP *************************************************************************************************************************************
+2025-10-17 19:07:57,768 p=35850 u=fred n=ansible INFO| localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-17 19:09:08,298 p=35894 u=fred n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2025-10-17 19:09:08,300 p=35894 u=fred n=ansible WARNING| [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2025-10-17 19:09:08,379 p=35894 u=fred n=ansible INFO| PLAY [Test the message of the days] ************************************************************************************************************
+2025-10-17 19:09:08,382 p=35894 u=fred n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************
+2025-10-17 19:09:08,899 p=35894 u=fred n=ansible INFO| ok: [localhost]
+2025-10-17 19:09:08,902 p=35894 u=fred n=ansible INFO| TASK [motd : Template the message of the days] *************************************************************************************************
+2025-10-17 19:09:09,582 p=35894 u=fred n=ansible INFO| changed: [localhost]
+2025-10-17 19:09:09,584 p=35894 u=fred n=ansible INFO| PLAY RECAP *************************************************************************************************************************************
+2025-10-17 19:09:09,584 p=35894 u=fred n=ansible INFO| localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
