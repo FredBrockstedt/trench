@@ -9,7 +9,6 @@
 
 - name: Development Systems
   hosts: develop
-  connection: local
   tasks:
     - name: Setup
       ansible.builtin.include_tasks: develop.yml
