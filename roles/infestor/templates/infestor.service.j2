@@ -1,6 +1,7 @@
 [Unit]
 Description=Run ansible-pull regularly
+Wants=network.target
 
 [Service]
 Type=oneshot
-ExecStart=ansible-pull -U {{ infestor_giturl }} {{ infestor_playbook }}
+ExecStart=ansible-pull -U {{ infestor_giturl }} {{ infestor_playbook }} -i {{ infestor_inventory }}
