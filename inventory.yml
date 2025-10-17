@@ -2,12 +2,10 @@ all:
   hosts:
     localhost:
       ansible_connection: local
-    harletpacker830
-
+    harletpacker830:
 pingers:
   hosts:
-    kite-2-1
-    
+    kite-2-1:
 develop:
   hosts:
-    toughbook
+    toughbook:
