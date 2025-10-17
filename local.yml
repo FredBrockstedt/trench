@@ -1,4 +1,4 @@
-# run this with: ansible-playbook local.yml
+# run this with: ansible-playbook local.yml -i inventory.yml
 --- 
 - name: Infest system with ansible-pull
   hosts: localhost
@@ -13,3 +13,12 @@
     - name: Setup
       ansible.builtin.include_tasks: develop.yml
 
+- name: Install Software
+  hosts: harlotpacker830
+  connection: local
+  tasks:
+    - name: Install rpm packages
+      become: true
+      ansible.builtin.dnf:
+        name: "{{ packages }}"
+        state: present

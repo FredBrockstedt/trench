@@ -2,10 +2,26 @@ all:
   hosts:
     localhost:
       ansible_connection: local
+redhat:
+  hosts:
     harlotpacker830:
+  vars:
+    packages:
+      - ipython
+      - whois
+      - mc
+      - stow
+      - ansible-lint
+      - tmux
+      - figlet
+      - dnf-automatic
+      - cowsay
+      - clamav
+      - ncdu
 pingers:
   hosts:
     kite-2-1:
 develop:
   hosts:
     toughbook:
+    harlotpacker830:
