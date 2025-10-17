@@ -1,10 +1,11 @@
 # run this with: ansible-playbook local.yml
 --- 
 - name: Infest system with ansible-pull
-  hosts: all
+  hosts: localhost
   connection: local
   roles:
     - role: infestor
+    - role: motd
 
 - name: Development Systems
   hosts: develop
