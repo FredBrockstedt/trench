@@ -2,7 +2,7 @@ all:
   hosts:
     localhost:
       ansible_connection: local
-    harletpacker830:
+    harlotpacker830:
 pingers:
   hosts:
     kite-2-1:
