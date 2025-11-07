@@ -1,4 +1,16 @@
 ---
+# Time
+- name: Check if time is synchronised with ntp server
+  ansible.builtin.command: chronyc tracking
+  register: chrony
+  ignore_errors: true
+  changed_when: chrony.rc == 1
+
+- name: Extract time synchronisation status
+  ansible.builtin.set_fact:
+    chrony_status:  "{{ chrony.stdout_lines | select('search', 'Leap status') | replace('Leap status     : ', '') }}"
+    ignore_errors: true
+
 # Patch status
 - name: Check if the system requires a restart
   ansible.builtin.command: dnf needs-restarting -r

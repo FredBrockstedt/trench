@@ -6,7 +6,8 @@
                                      |_|
 
   Last pull:	 {{ ansible_date_time.iso8601 }}
-  SELinux:	 {{ ansible_selinux.status | default('FAIL') }}
   Needs restart: {{ needs_restart.rc == 1 | default('FAIL') }}
-  ClamAV:        {{ clamav_infected_files[0] | default('FAIL') }} infected files
+  SELinux:	 {{ ansible_selinux.status | default('FAIL') }}
+  ClamAV:        {{ clamav_infected_files | first | default('FAIL') }} infected files
+  Chrony:        {{ chrony_status | first | default('FAIL') }}
 
