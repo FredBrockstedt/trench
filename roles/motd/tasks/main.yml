@@ -1,10 +1,37 @@
 ---
+# Patch status
 - name: Check if the system requires a restart
   ansible.builtin.command: dnf needs-restarting -r
   register: needs_restart
   ignore_errors: true
   changed_when: needs_restart.rc == 1
 
+# Malware protection
+- name: ClamAV
+  block:
+  - name: List log files in directory
+    ansible.builtin.find:
+      paths: /var/log/clamav
+      patterns: "*.log"
+      file_type: file
+      age: 0
+    register: clamav_logs
+  
+  - name: Get newest log file path
+    ansible.builtin.set_fact:
+      newest_clamav_log: "{{ clamav_logs.files | sort(attribute='mtime', reverse=true) | first }}"
+      
+  - name: Slurp newest log file
+    ansible.builtin.slurp:
+      src: "{{ newest_clamav_log.path }}"
+    register: clamav_log_raw
+  
+  - name: Extract infected files line
+    ansible.builtin.set_fact:
+      clamav_infected_files: "{{ clamav_log_raw.content | b64decode | regex_findall('[^\n]+') | select('search', 'Infected') | replace('Infected files: ', '') }}"
+  ignore_errors: true
+  
+# Render gathered information
 - name: Template the message of the days
   become: true
   ansible.builtin.template:
