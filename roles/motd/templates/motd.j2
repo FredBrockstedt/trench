@@ -10,4 +10,4 @@
   SELinux:	 {{ ansible_selinux.status | default('FAIL') }}
   ClamAV:        {{ clamav_infected_files | first | default('FAIL') }} infected files
   Chrony:        {{ chrony_status | first | default('FAIL') }}
-
+  Firewall:      {{ ansible_facts.services['firewalld.service'].status | default('FAIL') }}

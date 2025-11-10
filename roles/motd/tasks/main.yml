@@ -1,4 +1,8 @@
 ---
+# System
+- name: Gather service facts
+  ansible.builtin.service_facts:
+
 # Time
 - name: Check if time is synchronised with ntp server
   ansible.builtin.command: chronyc tracking
